@@ -4,8 +4,7 @@ const CardsData = [
       name: "Collectivities Party",
       image: "https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg",
       date: "2022-12-12",
-      description:
-        "Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
+      description:"Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
       category: "Food Fair",
       place: "Room A",
       capacity: 45000,

@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="container-fluid ">
-                <a href="#">
+                <a href="../page/index.html">
                     <img src="../imagenes/amazing_brand.png" alt="logo" class=" img-fluid  " id="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -26,7 +26,7 @@
                     <ul class=" navbar-Nav d-flex " id="navcontainer">
                         <li
                             class=" nav-item lin border rounded-start-circle d-flex justify-content-center  align-items-center flex-item  mx-2">
-                            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                            <a class="nav-link active" aria-current="page" href="../page/index.html">HOME</a>
                         </li>
                         <li
                             class=" nav-item  lin border rounded-1  d-flex justify-content-center  align-items-center  mx-2 ">
@@ -35,7 +35,8 @@
                         </li>
                         <li
                             class=" nav-item lin border rounded-1 d-flex justify-content-center align-items-center  mx-2  ">
-                            <a class="nav-link text-center w-75  " aria-current="page" href="./EVENTOS PASADOS .html">EVENTOS PASADOS</a>
+                            <a class="nav-link text-center w-75  " aria-current="page"
+                                href="./EVENTOS PASADOS .html">EVENTOS PASADOS</a>
                         </li>
                         <li
                             class=" nav-item lin border rounded-1 d-flex justify-content-center  align-items-center  mx-2">
@@ -43,11 +44,11 @@
                         </li>
                         <li
                             class=" nav-item lin border  rounded-1 d-flex justify-content-center  align-items-center  mx-2 ">
-                            <a class="nav-link " aria-current="page" href="./ESTADISTICAS.html">NUESTRAS ESTADISTICAS</a>
+                            <a class="nav-link " aria-current="page" href="./ESTADISTICAS.html"> NUESTRAS ESTADISTICAS</a>
                         </li>
                         <li
                             class=" nav-item lin border rounded-end-circle d-flex  justify-content-center align-items-center  mx-2  ">
-                            <a class="nav-link " aria-current="page" href="./DETALLES.html">DETALLES DE TU EVENTO</a>
+                            <a class="nav-link " aria-current="page" href="#">DETALLES DE TU EVENTO</a>
                         </li>
                     </ul>
                 </div>
@@ -55,59 +56,10 @@
         </nav>
     </header>
     <main>
-        <div id="carouselExampleCaptions" class=" container carousel slide">
-            <h1 class=" d-flex justify-content-center">HOME</h1>
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class=" carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/imagenes/optional_banner_1.jpg" class="imagencarr" alt="sushi">
-                    <div class="carousel-caption d-none d-md-block rounded-5">
-                        <h5 class="h5 rounded-5">SUSHI</h5>
-                        <p class="pcarr rounded-5">UNA COMBINACION ASIATICA </p>
-                    </div>
-                </div>
-                <div class="carousel-item ">
-                    <img src="/imagenes/optional_banner_2.jpg" class="imagencarr" alt="auditorio">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="h5 rounded-5">ESPACIOS CONFORTABLES</h5>
-                        <p class="pcarr rounded-5">AUDITORIOS Y SALONES CON EL MEJOR MOBILIARIO</p>
-                    </div>
-                </div>
-                <div class="carousel-item ">
-                    <img src="/imagenes/optional_banner_3.jpg" class="imagencarr" alt="espacios">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="h5 rounded-5">TU CIUDAD</h5>
-                        <p class="pcarr rounded-5
-                        ">EL MEJOR AMBIENTE CERCA A TU HOGAR </p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <div id="ckeckscontainers" class=" container-fluid d-flex justify-content-evenly align-items-center mt-5 border" >
-
-            <div id="checkbox-container" class="check-group"> </div>
-            
-        </div>
-        <div id="contenedor2" class=" row row-cols-1 row-cols-ms-2 row-cols-md-3 row-cols-lg-5 ps-4 mt-5 mb-5 gap-5 d-flex justify-content-evenly w-100 "></div>
-        
+       
+        <div id="detalle-evento" class=" row row-cols-1 row-cols-ms-2 row-cols-md-3 row-cols-lg-5 ps-4 mt-5 mb-5 gap-5 d-flex justify-content-evenly w-100 ">
+        <!-- Contenedor para mostrar detalles del evento -->
+    </div>
     </main>
     <footer>
         <div class=" dfooter container-fluid d-flex justify-content-around align-items-center border w-100">
@@ -125,12 +77,9 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="../scripts/index.js"></script>
-
-
-
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="../scripts/DETALLES.js"></script>
 </body>
 
 </html>

@@ -197,53 +197,52 @@ const CardsData = [
 
 const opciones = ['Feria de Comida', 'Museo', 'Concierto', 'MMB', 'Cine', 'Corferias'];
 
-
-const checkboxContainer = document.getElementById('checkbox-container');
-opciones.forEach((opcion, index) => {
-    checkboxContainer.innerHTML += `
-        <label class="form-check form-check-inline  ">
-            <input type="checkbox" class="form-check-input" id="flexCheckChecked${index + 1}" value="${opcion}">
-            <span class="form-check-label ">${opcion}</span>
-        </label>
-    `;
-});
-
-const FormDeBusqueda = `
-    <form id="search-form" class="search-form">
-        <div class="d-flex justify-content-end" id="search-container">
-            <input type="text" name="search" id="search-input" placeholder="Buscar" class="form-control">
-            <button type="submit">
-                <img src="../imagenes/search.svg" alt="Lupa">
-            </button>
-            <button type="button" id="clear-button">Limpiar</button>
-        </div>
-    </form>
-`;
-checkboxContainer.insertAdjacentHTML('afterend', FormDeBusqueda);
-
-document.getElementById('clear-button').addEventListener('click', () => {
-    document.getElementById('search-input').value = '';
-    pintarTodasLasTarjetas(CardsData);
-});
-
-
-function filtrarPorNombreYDescripcion(searchTerm) {
-  searchTerm = searchTerm.toLowerCase().trim();
-  return CardsData.filter(evento => 
-      evento.Nombre.toLowerCase().includes(searchTerm) ||
-      evento.Descripcion.toLowerCase().includes(searchTerm)
-  );
-}
-
-
-function pintarTodasLasTarjetas(data) {
-  const contenedor2 = document.getElementById('contenedor2');
-  contenedor2.innerHTML = ''; 
-
-  data.forEach(evento => {
-      const divTarjeta = document.createElement('div');
-      divTarjeta.classList.add('card');
-      divTarjeta.innerHTML = `
+  const checkboxContainer = document.getElementById('checkbox-container');
+  opciones.forEach((opcion, index) => {
+      checkboxContainer.innerHTML += `
+          <label class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="flexCheckChecked${index + 1}" value="${opcion}">
+              <span class="form-check-label">${opcion}</span>
+          </label>
+      `;
+  });
+  
+  const FormDeBusqueda = `
+      <form id="search-form" class="search-form">
+          <div class="d-flex justify-content-end" id="search-container">
+              <input type="text" name="search" id="search-input" placeholder="Buscar" class="form-control">
+              <button type="submit">
+                  <img src="../imagenes/search.svg" alt="Lupa">
+              </button>
+              <button type="button" id="clear-button">Limpiar</button>
+          </div>
+      </form>
+  `;
+  checkboxContainer.insertAdjacentHTML('afterend', FormDeBusqueda);
+  
+  document.getElementById('clear-button').addEventListener('click', () => {
+      document.getElementById('search-input').value = '';
+      aplicarFiltrosYMostrarTarjetas();  
+  });
+  function filtrarPorNombreYDescripcion(searchTerm) {
+      searchTerm = searchTerm.toLowerCase().trim();
+      return CardsData.filter(evento => 
+          evento.Nombre.toLowerCase().includes(searchTerm) ||
+          evento.Descripcion.toLowerCase().includes(searchTerm)
+      );
+  } 
+  function pintarTodasLasTarjetas(data) {
+      const contenedor2 = document.getElementById('contenedor2');
+      contenedor2.innerHTML = ''; 
+      const fechaActual = new Date('2023-01-01');
+      const eventosFuturos = data.filter(evento => {
+          const fechaEvento = new Date(evento.Fecha);
+          return fechaEvento > fechaActual;
+      });
+      eventosFuturos.forEach(evento => {
+          const divTarjeta = document.createElement('div');
+          divTarjeta.classList.add('card');
+          divTarjeta.innerHTML = `
           <div class="card-header">
               
               <img class="card-img-top" src="${evento.Imagen}" alt="${evento.Nombre}">
@@ -264,67 +263,41 @@ function pintarTodasLasTarjetas(data) {
           </div>
       `;
       contenedor2.appendChild(divTarjeta);
-
       
-      const detailsButton = divTarjeta.querySelector('.btn.btn-primary');
-      detailsButton.addEventListener('click', () => {
-          
-          window.location.href = `DETALLES.html?id=${evento._id}`;
       });
-  });
-
-  
-  if (data.length === 0) {
-      contenedor2.innerHTML = '<p>No se encontraron eventos que coincidan con los criterios de búsqueda.</p>';
+  } 
+  function manejarBusquedaEnTiempoReal() {
+      const searchTerm = document.getElementById('search-input').value;
+      const eventosFiltrados = filtrarPorNombreYDescripcion(searchTerm);
+      pintarTodasLasTarjetas(eventosFiltrados);
   }
-}
-
-
-function manejarBusquedaEnTiempoReal() {
-    const searchTerm = document.getElementById('search-input').value;
-    const eventosFiltrados = filtrarPorNombreYDescripcion(searchTerm);
-    pintarTodasLasTarjetas(eventosFiltrados);
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('search-input');
-    searchInput.addEventListener('input', manejarBusquedaEnTiempoReal);
-
-    
-    pintarTodasLasTarjetas(CardsData);
-});
-
-
- function filtrarPorCategoria() {
-  const checkboxes = document.querySelectorAll('.form-check-input');
-  const categoriasSeleccionadas = Array.from(checkboxes)
-    .filter(checkbox => checkbox.checked)
-    .map(checkbox => checkbox.value);
-
-  if (categoriasSeleccionadas.length === 0) {
-   
-    pintarTodasLasTarjetas(CardsData);
-  } else {
-   
-    const tarjetasFiltradas = CardsData.filter(evento =>
-      categoriasSeleccionadas.includes(evento.Categoria)
-    );
-    pintarTodasLasTarjetas(tarjetasFiltradas);
-  }
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const checkboxes = document.querySelectorAll('.form-check-input');
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', filtrarPorCategoria);
+  
+  function aplicarFiltrosYMostrarTarjetas() {
+      const searchTerm = document.getElementById('search-input').value;
+      const eventosFiltradosPorBusqueda = filtrarPorNombreYDescripcion(searchTerm);
+  
+      const checkboxes = document.querySelectorAll('.form-check-input');
+      const categoriasSeleccionadas = Array.from(checkboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+  
+      const fechaActual = new Date('2023-01-01');
+      const eventosFiltradosPorCategoriaYFecha = eventosFiltradosPorBusqueda.filter(evento =>
+          categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(evento.Categoria)
+      ).filter(evento =>
+          new Date(evento.Fecha) > fechaActual
+      );
+  
+      pintarTodasLasTarjetas(eventosFiltradosPorCategoriaYFecha);
+  } 
+  document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('input', aplicarFiltrosYMostrarTarjetas);
+  
+      const checkboxes = document.querySelectorAll('.form-check-input');
+      checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', aplicarFiltrosYMostrarTarjetas);
+      });
+      aplicarFiltrosYMostrarTarjetas();
   });
-  
-  
-  pintarTodasLasTarjetas(CardsData);
-});
-
-
-
-
+ 

@@ -31,26 +31,23 @@
                         <li
                             class=" nav-item  lin border rounded-1  d-flex justify-content-center  align-items-center  mx-2 ">
                             <a class=" nav-link text-center w-75" aria-current="page"
-                                href="../page/UpcomingEvents.html">UPCOMING
-                                EVENTS</a>
+                                href="./NUESTROS EVENTOS .html">NUESTROS EVENTOS</a>
                         </li>
                         <li
                             class=" nav-item lin border rounded-1 d-flex justify-content-center align-items-center  mx-2  ">
-                            <a class="nav-link text-center w-75  " aria-current="page"
-                                href="../page/PastEvents.html">PAST
-                                EVENTS</a>
+                            <a class="nav-link text-center w-75  " aria-current="page" href="#">EVENTOS PASADOS</a>
                         </li>
                         <li
                             class=" nav-item lin border rounded-1 d-flex justify-content-center  align-items-center  mx-2">
-                            <a class="nav-link " aria-current="page" href="../page/Contact.html">CONTACT</a>
+                            <a class="nav-link " aria-current="page" href="./CONTACTO.html">CONTACTANOS</a>
                         </li>
                         <li
                             class=" nav-item lin border  rounded-1 d-flex justify-content-center  align-items-center  mx-2 ">
-                            <a class="nav-link " aria-current="page" href="../page/Stats.html">STATS</a>
+                            <a class="nav-link " aria-current="page" href="./ESTADISTICAS.html">NUESTRAS ESTADISTICAS</a>
                         </li>
                         <li
                             class=" nav-item lin border rounded-end-circle d-flex  justify-content-center align-items-center  mx-2  ">
-                            <a class="nav-link " aria-current="page" href="#">DETAILS</a>
+                            <a class="nav-link " aria-current="page" href="./DETALLES.html">DETALLES DE TU EVENTO</a>
                         </li>
                     </ul>
                 </div>
@@ -58,11 +55,63 @@
         </nav>
     </header>
     <main>
-       
-        <div id="detalle-evento" class=" row row-cols-1 row-cols-ms-2 row-cols-md-3 row-cols-lg-5 ps-4 mt-5 mb-5 gap-5 d-flex justify-content-evenly w-100 ">
-        <!-- Contenedor para mostrar detalles del evento -->
-    </div>
+        <div id="carouselExampleCaptions" class=" container carousel slide">
+            <h1 class=" d-flex justify-content-center">EVENTOS PASADOS</h1>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../imagenes/books.jpg" class="imagencarr" alt="sushi">
+                    <div class="carousel-caption d-none d-md-block rounded-5">
+                        <h5 class="h5 rounded-5">SHOW DE LUCES</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../imagenes/music_concert.jpg" class="imagencarr" alt="auditorio">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="h5 rounded-5">MEJORES GRUPOS MUSICALES</h5>
+                        <p class="pcarr rounded-5">ROCK-POP-FUNK-SOUL</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../imagenes/food_fair.jpg" class="imagencarr" alt="espacios">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="h5 rounded-5">TU CIUDAD</h5>
+                        <p class="pcarr rounded-5
+                        ">EL MEJOR AMBIENTE CERCA A TU HOGAR </p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        <div id="ckeckscontainers" class=" container-fluid d-flex justify-content-evenly align-items-center mt-5 border" >
+
+            <div id="checkbox-container" class="check-group"> </div>
+            
+        </div>
+        <div id="contenedor2"
+            class=" row row-cols-1 row-cols-ms-2 row-cols-md-3 row-cols-lg-5 ps-4 mt-5 mb-5 gap-5 d-flex justify-content-evenly w-100 ">
+        </div>
+
     </main>
+
     <footer>
         <div class=" dfooter container-fluid d-flex justify-content-around align-items-center border w-100">
             <div class=" d-flex justify-content-evenly align-items-center w-50">
@@ -79,9 +128,10 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<script src="../scripts/Details.js"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../scripts/EVENTOS PASADOS.js"></script>
+
 </body>
 
 </html>

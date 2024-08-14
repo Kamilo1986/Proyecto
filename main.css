@@ -76,6 +76,9 @@ h5 {
     border-radius: 10rem;
     margin-top: 10px;
   } 
+  .social {
+    width: 10vw;
+  }
 }
 @media (max-width: 426px) {
   #navcontainer {
@@ -97,6 +100,9 @@ h5 {
   .check-group{
     display: flex;
     flex-direction: column;
+  }
+  .social {
+    width: 10vw;
   }
 }
 
